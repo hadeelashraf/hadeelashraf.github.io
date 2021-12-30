@@ -1,0 +1,51 @@
+.todo-form{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: -4rem;
+    box-shadow: 0 4px 12px rgba(black, 0.08);
+    h5{
+        font-weight: bold;
+    }
+    .alt-gradient-button {
+        border: none;
+        color: white;
+        font-weight: 600;
+        opacity: 0.92;
+        height: 100%;
+        font-size: 1.1rem;
+
+        &:not(:disabled){
+            background: linear-gradient(to right, rgb(236, 72, 140), rgb(240, 54, 82));
+        }
+        &:hover {
+            opacity: 1;
+            box-shadow: 0px 0px 0px 4px rgba(black, 0.05);
+        }
+    
+        &:active {
+            opacity: 0.8;
+        }
+    
+        &:focus {
+            opacity: 1;
+        }
+    
+        i.material-icons {
+            margin-right: 5px;
+            margin-left: -3px;
+            font-weight: 600;
+            position: relative;
+            top: 3px;
+            font-size: 1.1rem;
+        }
+    }
+    .alt-gradient-button:disabled{
+        background-color: #eee !important;
+        pointer-events: visible !important;
+        
+        &:hover{
+            cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<div class="row justify-content-center plr-10">
+    <div class="col-sm-10 col-12 todo-form">
+        <h5 class="pb-2">New Todo</h5>
+        <form class="row" #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <div class="col-sm-10 col-12">
+                <input ngModel #todoTextField="ngModel" 
+                    required minlength="2" name="text" 
+                    type="text" class="form-control" 
+                    placeholder="Add a To-do Item ...">
+            </div>
+            <div class="col-sm-2 col-12">
+                <button type="submit" 
+                    class="btn alt-gradient-button w-100"
+                    [disabled]="!userId"
+                    >
+                    <i class="material-icons">add</i> 
+                    <span>Add</span>
+                </button>
+            </div>
+            <div class="col-12" *ngIf="todoTextField.invalid && showValidationErrors">
+                <p class="text-danger m-0" *ngIf="todoTextField.errors?.required">Please enter the text of your todo</p>
+                <p class="text-danger m-0" *ngIf="todoTextField.errors?.minlength">Todo text must be at least 2 characters</p>
+            </div>
+        </form>
+    </div>
+</div>

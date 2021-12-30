@@ -1,0 +1,19 @@
+<a class="list-group-item-action todo-item" (click)="onTodoClicked()" [class.completed]="todo.completed">
+    <div class="check-box" (click)="todo.completed = !todo.completed">
+        <i class="material-icons">check</i>
+    </div>
+    <div class="todo-text">
+        {{todo.text}}
+        <p>Added: {{todo.date | date: 'EEEE, MMMM d, y, h:mm a'}}</p>
+    </div>
+
+    <div class="todo-controls-box" (click)="$event.stopPropagation()">
+        <div class="todo-control-button" (click)="onEditClicked()">
+            <i class="material-icons">edit</i>
+        </div>
+
+        <div class="todo-control-button is-danger" (click)="onDeleteClicked()">
+            <i class="material-icons">delete</i>
+        </div>
+    </div>
+</a>

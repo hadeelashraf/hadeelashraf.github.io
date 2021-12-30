@@ -1,0 +1,17 @@
+<div class="col-12">
+    <div class="row header justify-content-center">
+        <p class="logout" (click)="logout()" *ngIf="isAuth">
+            <img src="../../../assets/images/logout.png" width="20">
+            Logout
+        </p>
+        <div class="col-sm-8 col-12">
+            <h1>
+                To Do
+            </h1>
+            <h3 class="mt-3" id="description"></h3>
+            <button *ngIf="!isAuth" type="button" class="btn btn-danger btn-lg mt-3" (click)="login()">
+                Sign up to Start Now !
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<h5 class="title">{{isLogin? 'Login' : 'Register'}}</h5>
+<div mat-dialog-content>
+    <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+        <div class="col-12">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" 
+                    class="form-control" 
+                    id="email" 
+                    placeholder="name@example.com"
+                    ngModel #email="ngModel" 
+                    required email name="email"
+                >
+                <p *ngIf="email.invalid && showValidationErrors" class="text-danger m-0">Please enter a valid email</p>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" 
+                    class="form-control" 
+                    id="password" 
+                    placeholder="Password must be at least 6 characters"
+                    ngModel #password="ngModel" 
+                    required password name="password"
+                    minlength="6"
+                >
+                <div *ngIf="password.invalid && showValidationErrors">
+                    <p class="text-danger m-0" *ngIf="password.errors?.required">
+                        Please enter your password
+                    </p>
+                    <p class="text-danger m-0" *ngIf="password.errors?.minlength">Password must be at least 6 characters</p>
+                </div>
+            </div>
+            <div *ngIf="notExistedError && showValidationErrors" class="mb-3 text-center">
+                <p class="text-danger m-0">This Account doesn't Exist!</p>
+            </div>
+            <div class="mb-3 text-center">
+                {{isLogin? "Don't have Account? " : 'Already has an account? '}}
+                <button type="button" class="btn btn-link" (click)="toggleLogin()">
+                    {{isLogin? 'Sign up' : 'Login'}}
+                </button>
+            </div>
+        </div>
+        
+        <div class="col-12 d-flex justify-content-center">
+            <button type="button" class="btn btn-light me-2" (click)="close()">
+                Cancel
+            </button>
+            <button type="submit" class="btn btn-success"> 
+                {{isLogin? 'Login' : 'Sign up'}} 
+            </button>
+        </div>
+    </form>
+</div>

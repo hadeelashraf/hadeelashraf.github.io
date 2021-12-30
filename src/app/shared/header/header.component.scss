@@ -1,0 +1,40 @@
+.header{
+    background-image:linear-gradient(to left, rgb(59 59 59 / 60%), rgb(0 0 0 / 68%)),
+    url('../../../assets/images/background-planning.jpg');
+    text-align: center;
+    padding: 100px 100px 120px;
+    margin: 0;
+    background-size: cover;
+    color: #fff;
+    h1{
+        text-shadow: 0 3px 3px rgba(black, 0.12);
+    }
+    .btn-danger{
+        background-color: rgb(240, 54, 82);
+        border-color:rgb(240, 54, 82); 
+        opacity: 0.9;
+        
+        &:hover, &:focus{
+            opacity: 0.95;
+        }
+    }
+    .logout{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #c9c9c9bf;
+        font-size: 0.8rem;
+        width: fit-content;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            img{
+                opacity: 1;
+            }
+        }
+        img{
+            opacity: 0.7;
+        }
+
+    }
+}
